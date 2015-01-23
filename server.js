@@ -32,33 +32,6 @@ Instagram.set('callback_url', clientSecret +'/callback');
 Instagram.set('redirect_uri', clientSecret);
 Instagram.set('maxSockets', 10);
 
-/**
- * Uses the library "instagram-node-lib" to Subscribe to the Instagram API Real Time
- * with the tag "hashtag" lollapalooza
- * @type {String}
- */
-Instagram.subscriptions.subscribe({
-  object: 'tag',
-  object_id: 'lollapalooza',
-  aspect: 'media',
-  callback_url: clientSecret+'/callback',
-  type: 'subscription',
-  id: '#'
-});
-
-/**
- * Uses the library "instagram-node-lib" to Subscribe to the Instagram API Real Time
- * with the tag "hashtag" lollapalooza2013
- * @type {String}
- */
-Instagram.subscriptions.subscribe({
-  object: 'tag',
-  object_id: 'lollapalooza2013',
-  aspect: 'media',
-  callback_url: clientSecret + '/callback',
-  type: 'subscription',
-  id: '#'
-});
 
 /**
  * Uses the library "instagram-node-lib" to Subscribe to the Instagram API Real Time
@@ -118,7 +91,7 @@ app.get("/views", function(req, res){
  */
 io.sockets.on('connection', function (socket) {
   Instagram.tags.recent({
-      name: 'lollapalooza',
+      name: clientHashTag,
       complete: function(data) {
         socket.emit('firstShow', { firstShow: data });
       }
