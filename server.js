@@ -20,7 +20,7 @@ var pub = __dirname + '/public',
  */
 var clientID = '194ac511f1f242c7b8ecf453e18cde5e',
     clientSecret = 'bf4bcae46cd7468b8f9e06aed9197adf',
-	callBackURL = '',
+	callBackURL = 'http://pushpress-instagram.herokuapp.com',
 	clientHashTag = 'pushpress';
 
 /**
