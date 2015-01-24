@@ -76,7 +76,7 @@ var allowCrossDomain = function(req, res, next) {
  * Set your app main configuration
  */
 app.configure(function(){
-	app.user(allowCrossDomain);
+	app.use(allowCrossDomain);
     app.use(express.bodyParser());
     app.use(express.methodOverride());
     app.use(app.router);
