@@ -61,6 +61,7 @@ io.configure(function () {
     , 'jsonp-polling'
   ]);
   io.set("polling duration", 10);
+  io.set('origins', '*');
 });
 
 var allowCrossDomain = function(req, res, next) {
