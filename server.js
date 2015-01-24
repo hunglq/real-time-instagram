@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 var port = process.env.PORT || 3700;
-var io = require('socket.io').listen(app.listen(port), origins:'*:*'});
+var io = require('socket.io').listen(app.listen(port), {origins:'*:*'});
 var Instagram = require('instagram-node-lib');
 var http = require('http');
 var request = ('request');
