@@ -1,7 +1,7 @@
 var express = require("express");
 var app = express();
 var port = process.env.PORT || 3700;
-var io = require('socket.io').listen(app.listen(port));
+var io = require('socket.io').listen(app.listen(port), origins:'*:*'});
 var Instagram = require('instagram-node-lib');
 var http = require('http');
 var request = ('request');
@@ -61,7 +61,7 @@ io.configure(function () {
     , 'jsonp-polling'
   ]);
   io.set("polling duration", 10);
-  io.set('origins', '*');
+  
 });
 
 var allowCrossDomain = function(req, res, next) {
